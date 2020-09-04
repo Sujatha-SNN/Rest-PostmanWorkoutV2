@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "39437ab1-d333-4de4-9039-f35f6b78113c",
+		"name": "FreshBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Estimates",
+			"item": [
+				{
+					"name": "Create Single Line Estimate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da63c0f1-b65b-44a7-a247-83794a0cb188",
+								"exec": [
+									"var json_data = pm.response.json();\r",
+									"var  estimate_id = json_data.response.result.estimate.estimateid;\r",
+									"pm.collectionVariables.set(\"estimate_id\",estimate_id);\r",
+									"console.log(\"estimate_id\" + estimate_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estimate\": {\r\n     \"email\": \"nethra@abcorp.com\",\r\n     \"customerid\": \"{{client_id}}\",\r\n     \"create_date\": \"2020-09-03 05:05:54\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/estimates/estimates",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"estimates",
+								"estimates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a single line Estimate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estimate\": {\r\n   \"city\": \"Chennai\",\r\n   \"code\": \"INDIA\",\r\n   \"customerid\": \"{{client_id}}\",\r\n     \r\n     \"create_date\": \"2020-09-04\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/estimates/estimates/{{estimate_id}}",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"estimates",
+								"estimates",
+								"{{estimate_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get created estimate and verify",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d76cf6dd-ce36-4cf1-81eb-d1b81cacbe98",
+								"exec": [
+									"pm.test(\"Body matches INDIA\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"INDIA\");\r",
+									"});\r",
+									"pm.test(\"Check for presence of String 'Chennai'\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response.result.estimate.city).to.eql(\"Chennai\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/estimates/estimates/{{estimate_id}}",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"estimates",
+								"estimates",
+								"{{estimate_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Estimate with single line",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estimate\": {\r\n    \"email\": \"test@example.com\",\r\n    \"customerid\": \"{{client_id}}\",\r\n    \"create_date\": \"2016-04-04\",\r\n    \"lines\": [\r\n      {\r\n        \"type\": 0,\r\n        \"description\": \"\",\r\n        \"taxName1\": \"\",\r\n        \"taxAmount1\": 0,\r\n        \"name\": \"Paperwork\",\r\n        \"qty\": 1,\r\n        \"taxName2\": \"\",\r\n        \"taxAmount2\": 0,\r\n        \"unit_cost\": {\r\n            \"amount\": \"5000.00\",\r\n            \"code\": \"USD\"\r\n        }\r\n      }\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/estimates/estimates",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"estimates",
+								"estimates"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2dd2176c-1d7d-4556-973e-79df0beafe49",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f15e0756-0ef9-4a3b-b4da-bf1b2efce0cc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TimeEntry",
+			"item": [
+				{
+					"name": "Get Identity Call",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bdf55bc-f6c0-4489-a28a-58164dc8f466",
+								"exec": [
+									"var json_data = pm.response.json();\r",
+									"var account_id = json_data.response.business_memberships[1].business.account_id;\r",
+									"var business_id=json_data.response.profile.professions[0].business_id;\r",
+									"console.log(account_id); \r",
+									"pm.globals.set(\"account_id\", account_id);\r",
+									"pm.globals.set(\"business_id\", business_id);\r",
+									"console.log(business_id); \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fresh_books}}auth/api/v1/users/me",
+							"host": [
+								"{{fresh_books}}auth"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Time Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d108820-7dd4-4c3e-b43c-85ae3a9d97b0",
+								"exec": [
+									"\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"var time_entry_id = jsonData.time_entry.id;\r",
+									"console.log(time_entry_id);\r",
+									"\r",
+									"pm.globals.set(\"time_entry_id\", time_entry_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"time_entry\": {\r\n        \"is_logged\": true,\r\n        \"duration\": 10000,\r\n        \"note\": \"Stuff\",\r\n        \"started_at\": \"2016-08-16T20:00:00.000Z\",\r\n        \"client_id\": \"{{client_id}}\",\r\n        \"project_id\": \"{{project_id}}\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{fresh_books}}timetracking/business/{{business_id}}/time_entries",
+							"host": [
+								"{{fresh_books}}timetracking"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"time_entries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create OAuth Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.freshbooks.com/auth/oauth/token?client_id=32ba0f1b69db311d6309834b16df13c41d8b5154e1ff3bd22a4be993f35828cd&client_secret=62f0aea572c7ada7888b154f05b51a946abd4cbb9a7a06a03b661f02bdd4b71e&code=efee63492da963ea9a6123ddb561f94d4e88ac99683880848f3f398560b73d84&redirect_uri=https://firstfbapp.com/redirect&grant_type=authorization_code",
+							"protocol": "https",
+							"host": [
+								"api",
+								"freshbooks",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "32ba0f1b69db311d6309834b16df13c41d8b5154e1ff3bd22a4be993f35828cd"
+								},
+								{
+									"key": "client_secret",
+									"value": "62f0aea572c7ada7888b154f05b51a946abd4cbb9a7a06a03b661f02bdd4b71e"
+								},
+								{
+									"key": "code",
+									"value": "efee63492da963ea9a6123ddb561f94d4e88ac99683880848f3f398560b73d84"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://firstfbapp.com/redirect"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client - vdGqkd (acc id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "99a93f8f-b41a-4de9-a4a8-3606c58be934",
+								"exec": [
+									"var json_data = pm.response.json();\r",
+									"var client_id = json_data.response.result.client.id;\r",
+									"console.log(client_id); \r",
+									"pm.globals.set(\"client_id\", client_id);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"email\": \"nandhana@abcorp.com\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/users/clients",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"users",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"project\": {\r\n    \"title\": \"My Cool Project\",\r\n    \"client_id\": \"{{client_id}}\",\r\n    \"project_type\": \"fixed_price\",\r\n    \"fixed_price\": \"500\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{fresh_books}}projects/business/{{business_id}}/projects",
+							"host": [
+								"{{fresh_books}}projects"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Time Entries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7f65e1ca-57ef-4c09-8c1f-8583ea7dbc20",
+								"exec": [
+									"var time_entry_id = pm.globals.get(\"time_entry_id\");\r",
+									"var jsonData = pm.response.json();\r",
+									"var count = jsonData.time_entries.length;\r",
+									"console.log();\r",
+									"for(var index=0;index<count;index++)\r",
+									"{\r",
+									"    if(jsonData.time_entries[index].id == time_entry_id)\r",
+									"        console.log(\"found \" +time_entry_id +\"same as\" + jsonData.time_entries[index].id);\r",
+									"}\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{fresh_books}}timetracking/business/{{business_id}}/time_entries",
+							"host": [
+								"{{fresh_books}}timetracking"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"time_entries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Created Time Entry",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1eef83c7-0fcb-434c-962a-41a4fd9acb90",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var start_time = jsonData.time_entry.started_at;\r",
+									"var client_id = jsonData.time_entry.client_id;\r",
+									"var project_id = jsonData.time_entry.project_id;\r",
+									"\r",
+									"pm.globals.set(\"start_time\",start_time);\r",
+									"pm.globals.set(\"client_id\",client_id);\r",
+									"pm.globals.set(\"project_id\",project_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fresh_books}}timetracking/business/{{business_id}}/time_entries/{{time_entry_id}}",
+							"host": [
+								"{{fresh_books}}timetracking"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"time_entries",
+								"{{time_entry_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Time Entry",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9016f8af-e82b-44a1-b57d-3d21b3c3f0b2",
+								"exec": [
+									"pm.globals.get(\"time_entry_id\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"time_entry\": {\r\n      \"is_logged\": true,\r\n      \"duration\": 60000,\r\n      \"note\": \"Updated from Postman\",\r\n      \"started_at\": \"{{start_time}}\",\r\n      \"timer\": {\r\n          \"id\": \"7000\"\r\n      },\r\n      \"client_id\" :  \"{{client_id}}\",\r\n      \"project_id\": \"{{project_id}}\"\r\n  }\r\n   \r\n}"
+						},
+						"url": {
+							"raw": "{{fresh_books}}timetracking/business/{{business_id}}/time_entries/{{time_entry_id}}",
+							"host": [
+								"{{fresh_books}}timetracking"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"time_entries",
+								"{{time_entry_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Created Time Entry",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{fresh_books}}timetracking/business/{{business_id}}/time_entries/{{time_entry_id}}",
+							"host": [
+								"{{fresh_books}}timetracking"
+							],
+							"path": [
+								"business",
+								"{{business_id}}",
+								"time_entries",
+								"{{time_entry_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_id\": \"32ba0f1b69db311d6309834b16df13c41d8b5154e1ff3bd22a4be993f35828cd\",\r\n    \"client_secret\": \"62f0aea572c7ada7888b154f05b51a946abd4cbb9a7a06a03b661f02bdd4b71e\",\r\n    \"token\": \"500c215c4ac826f18986395643c50941af0556c7f3f5198509e88f8376d69687\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api.freshbooks.com/auth/oauth/revoke",
+							"protocol": "https",
+							"host": [
+								"api",
+								"freshbooks",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client - YkY7PK(acc id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8063258-9e76-4462-a15e-8281574e5033",
+								"exec": [
+									"var json_data = pm.response.json();\r",
+									"var client_id = json_data.response.result.client.id;\r",
+									"console.log(client_id); \r",
+									"pm.globals.set(\"client_id\", client_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": {\r\n        \"email\": \"sara@abcorp.com\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{fresh_books}}accounting/account/{{account_id}}/users/clients",
+							"host": [
+								"{{fresh_books}}accounting"
+							],
+							"path": [
+								"account",
+								"{{account_id}}",
+								"users",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "c428ad1c7acba09c512ac0ad5ec1d3b203fba517022e9b8114d93eed1f2aee79",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6a1d7d15-3a8a-4f6a-9cfb-aaed4e3e3a53",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "27f17cb5-9a95-4435-98b9-203cfe1400e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9a3483a2-8223-459c-8cd2-0559f55f8776",
+			"key": "estimate_id,id",
+			"value": ""
+		},
+		{
+			"id": "3acf59e9-2459-450b-ad60-2c6d829f6d6f",
+			"key": "estimate_id",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
