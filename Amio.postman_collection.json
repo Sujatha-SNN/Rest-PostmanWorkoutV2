@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "fa81f083-b5c4-46be-87a1-c1b3bd726e5a",
+		"name": "Amio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Id for Channel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amio.io/v1/channels/6710973882121866364",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"channels",
+						"6710973882121866364"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Channels",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.amio.io/v1/channels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.amio.io/v1/channels amiofb",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"facebook_messenger\",\r\n  \"name\": \"TestChannel1\",\r\n  \"mode\": \"production\",\r\n  \"webhook\": {\r\n    \"url\": \"https://my-project.com/webhooks\",\r\n    \"secret\": \"TsEW3ZmFKmpe2WltNfVmqtQie24\"\r\n  },\r\n    \"facebook_page\": {\r\n    \"id\": \"100544898470849\",    \r\n    \"access_token\": \"EAAZAqmOEDma8BABvPwSSjDXylB3352xQ5TL6nOFZC93KK7j8IszI86WLwVenZBFHmfgUY7SaBWacsIFsvEUYv3Q818W94zqjgwRkcqM5LW20EKVLJpEXNi918fscZCutpDwmg1afeZBssugLptJRFtiZCKvVFq3IKASY8Mu6TrAgZDZD\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amio.io/v1/channels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.amio.io/v1/channels",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"facebook_messenger\",\r\n  \"name\": \"New Amio Channel\",\r\n  \"mode\": \"production\",\r\n  \r\n    \"facebook_page\": {\r\n    \"id\": \"102396981617721\",    \r\n    \"access_token\": \"EAAZAqmOEDma8BAEmlyejRXqkmLubCKMIwcCECVnbedBY7GYik4MZBh8wqIG5C4UtyLsGERwuFJVI9xC52ZBCg9Mr0VXExKdxw2M2wYURhmlcTtKm7Shau3IqO86Jadl4K5WLAV7clHfaw6dLoAChxBBzDklZATJDHiLzpdr26wSzZA62JTzRv\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amio.io/v1/channels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6336ba08-7dbd-4bca-8553-d29ea1da9bbd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4dcf06aa-8559-4413-84cf-fa6898e81a3d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "808b874c-c0d6-44ee-8d4a-e7029e62559f",
+			"key": "CHANNEL_TYPE",
+			"value": "facebook_messenger"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

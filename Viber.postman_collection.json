@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "38b363e5-5be8-4d73-9621-adba98ee77c5",
+		"name": "Viber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Message",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"channel\": {\r\n    \"id\": \"6711270475186323847\"\r\n  },\r\n  \"contact\": {\r\n    \"id\": \"6711513418186903167\"\r\n  },\r\n  \"content\": {\r\n    \"type\": \"text\",\r\n    \"payload\": \"Checking again!\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amio.io/v1/messages",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send File",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9276f34e-e447-4e7c-bb80-e31525ef0097",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(\"jsonData.id\") + jsonData.id;\r",
+							"//pm.variables.set(\"ChannelIDForFileAttachment\",jsonData.id);\r",
+							"\r",
+							"pm.globals.set(\"ChannelIDForFile\", jsonData.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"channel\": {\r\n\t\t\"id\": \"6711270475186323847\"\r\n\t},\r\n\t\"contact\": {\r\n\t\t\"id\": \"6711513418186903167\"\r\n\t},\r\n\t\"content\": {\r\n\t\t\"type\": \"file\",\r\n\t\t\"payload\": {\r\n\t\t\t\"url\": \"https://www.w3schools.com/images/myw3schoolsimage.jpg\"\r\n\t\t}\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amio.io/v1/messages",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0dfdbf5b-4ab3-44e3-9319-b7c8b52612cf",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var channelID = pm.globals.get(\"ChannelIDForFile\");\r",
+							"console.log(\"Ids List Id\" + jsonData.length + \"channelID\" + channelID);\r",
+							"for(var index=0;index<jsonData.length;index++)\r",
+							"{\r",
+							"   console.log(\"Channel Id\" + jsonData[index].id);\r",
+							"\r",
+							"   pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[index].id).to.eql(channelID);\r",
+							"    \r",
+							"});\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "IhTXjPzJjb2dpvGG3i9JF0YnWiHra5br0NCdIA7yO8TN5ZuIyVHdt5FpkEyLStCVTe1yG1fEiK76LRPdALUNmYceRN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.amio.io/v1/channels/6711270475186323847/contacts/6711513418186903167/messages",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amio",
+						"io"
+					],
+					"path": [
+						"v1",
+						"channels",
+						"6711270475186323847",
+						"contacts",
+						"6711513418186903167",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cc681bd5-687f-41b0-932a-2a780d54ffdd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9f4331ec-876c-4453-847a-4fb4a394f731",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e34fc2d9-a079-40d7-a3e2-beeda2ca9c83",
+			"key": "ChannelIDForFileAttachment",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
