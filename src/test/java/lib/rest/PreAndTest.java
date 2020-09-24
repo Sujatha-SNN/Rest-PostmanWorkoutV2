@@ -31,7 +31,6 @@ public class PreAndTest extends HTMLReporter{
 	
 	@BeforeSuite
 	public final void beforeSuite() { 
-		System.err.println("Here in PreAndTest BS");
 		startReport();
 	}
 	

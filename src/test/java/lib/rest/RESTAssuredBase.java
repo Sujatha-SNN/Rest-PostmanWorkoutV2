@@ -155,13 +155,8 @@ public class RESTAssuredBase extends PreAndTest{
 		public static void writeResponseDetailsToFile(String key,String value)
 		{
 			Properties prop = new Properties();
-			if(prop.containsKey(key))
-				prop.replace(key, value);
-			else
-				prop.setProperty(key, value);
-				//setProperty(key, value);
+			prop.setProperty(key, value);
 			try {
-				
 				prop.store(new FileOutputStream(new File("./src/test/resources/reponseAttributes.properties"),true), "Adding response id");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -175,7 +170,6 @@ public class RESTAssuredBase extends PreAndTest{
 			Properties prop = new Properties();
 			try {
 				prop.load(new FileInputStream(new File(fileName)));
-				System.out.println("inside loadProperties");
 				propertyRequested = (String)prop.get(property);
 			} catch (Exception e) {
 				e.printStackTrace();
