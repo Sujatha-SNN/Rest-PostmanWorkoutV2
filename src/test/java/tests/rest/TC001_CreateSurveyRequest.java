@@ -30,16 +30,13 @@ public class TC001_CreateSurveyRequest extends RESTAssuredBase{
 		List<Header> listHeader = new ArrayList<Header>();
 		listHeader.add(new Header("Content-Type", "application/json"));
 		listHeader.add(new Header("Accept", "application/json"));
-		
 		Headers headers = new Headers(listHeader);
 		// Post the request
 		Response response = postWithHeaderAndJsonBody(headers, "{    \"title\" : \"My Template\"}", "surveys");
-		
 		response.prettyPrint();
 		//Verify the Content by Specific Key
 		String survey_id = getContentWithKey(response, "id");
 		System.out.println("Survey ID " + survey_id);
-		
 		//Saving data from response in a properties for request-chaining
 		writeResponseDetailsToFile("survey_id",survey_id);
 		// Verify the response status code

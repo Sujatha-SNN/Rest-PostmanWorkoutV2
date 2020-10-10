@@ -1,0 +1,27 @@
+{
+    "headings": [
+        {
+            "heading": "Do you have a dedicated workspace where you can work at your home?"
+        }
+    ],
+    "position": 2,
+    "family": "single_choice",
+    "subtype": "vertical",
+    "answers": {
+        "choices":[
+            {
+                "text": "yes"
+            },
+            {
+                "text": "no"
+            }
+        ],
+        "other":[
+                {
+                    "text": "Other",
+                    "num_chars": 100,
+                    "num_lines": 3
+                }
+        ]
+    }
+}

@@ -52,17 +52,11 @@ public class PreAndTest extends HTMLReporter{
 		svcTest = startTestModule(nodes);
 		svcTest.assignAuthor(authors);
 		svcTest.assignCategory(category);
-		
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(new File("./src/test/resources/config.properties")));
-		
 		RestAssured.baseURI = "https://"+prop.getProperty("server")+"/";
-		
 		RestAssured.authentication = RestAssured.oauth2(prop.getProperty("oauthkey"));
-		System.out.println("AFter setting authentication");
-	//	RestAssured.authentication = RestAssured.DEFAULT_AUTH;
-
-	}
+		}
 
 	@AfterMethod
 	public void afterMethod() {

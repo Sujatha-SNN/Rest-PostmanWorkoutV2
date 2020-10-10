@@ -1,0 +1,30 @@
+{
+    "headings": [
+        {
+            "heading": "How satisfied are you with your current work from home arrangement?"
+        }
+    ],
+    "position": 2,
+    "family": "single_choice",
+    "subtype": "vertical",
+    "answers": {
+        "choices":[
+            {
+                "text": "Very satisfied"
+            },
+            {
+                "text": "Somewhat satisfied"
+            },
+			{
+                "text": "Neither satisfied nor dissatisfied"
+            }
+        ],
+        "other":[
+                {
+                    "text": "Other",
+                    "num_chars": 100,
+                    "num_lines": 3
+                }
+        ]
+    }
+}

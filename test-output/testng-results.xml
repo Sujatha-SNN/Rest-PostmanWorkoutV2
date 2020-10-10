@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="12" total="18" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="19889" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:35:10 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="19889" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:35:10 IST">
+      <class name="tests.rest.TC005_DeleteQuestionsRequest">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="setValues" is-config="true" duration-ms="5" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:08 IST" finished-at="2020-10-11T00:35:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:08 IST" finished-at="2020-10-11T00:35:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="deleteQuestion()[pri:5, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="deleteQuestion" duration-ms="1651" started-at="2020-10-11T00:35:08 IST" finished-at="2020-10-11T00:35:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteQuestion -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="afterClass" is-config="true" duration-ms="5" started-at="2020-10-11T00:35:10 IST" finished-at="2020-10-11T00:35:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC005_DeleteQuestionsRequest@13a3d88]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:10 IST" finished-at="2020-10-11T00:35:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- tests.rest.TC005_DeleteQuestionsRequest -->
+      <class name="tests.rest.TC004_ModifyQuestionsRequest">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="setValues" is-config="true" duration-ms="0" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:06 IST" finished-at="2020-10-11T00:35:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:06 IST" finished-at="2020-10-11T00:35:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="modidyQuestion()[pri:4, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="modidyQuestion" duration-ms="1826" started-at="2020-10-11T00:35:06 IST" finished-at="2020-10-11T00:35:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modidyQuestion -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:08 IST" finished-at="2020-10-11T00:35:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.rest.TC004_ModifyQuestionsRequest@f6106c]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:08 IST" finished-at="2020-10-11T00:35:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- tests.rest.TC004_ModifyQuestionsRequest -->
+      <class name="tests.rest.TC002_CreatePageRequest">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="setValues" is-config="true" duration-ms="0" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="beforeClass" is-config="true" duration-ms="5" started-at="2020-10-11T00:35:01 IST" finished-at="2020-10-11T00:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:01 IST" finished-at="2020-10-11T00:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createNewPage()[pri:2, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="createNewPage" duration-ms="1514" started-at="2020-10-11T00:35:01 IST" finished-at="2020-10-11T00:35:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewPage -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-10-11T00:35:03 IST" finished-at="2020-10-11T00:35:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.rest.TC002_CreatePageRequest@1bd930a]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:03 IST" finished-at="2020-10-11T00:35:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- tests.rest.TC002_CreatePageRequest -->
+      <class name="tests.rest.TC001_CreateSurveyRequest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="beforeSuite" is-config="true" duration-ms="1941" started-at="2020-10-11T00:34:48 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="setValues" is-config="true" duration-ms="0" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="beforeClass" is-config="true" duration-ms="5" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="beforeMethod" is-config="true" duration-ms="1850" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createNewSurvey()[pri:1, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="createNewSurvey" duration-ms="9605" started-at="2020-10-11T00:34:52 IST" finished-at="2020-10-11T00:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewSurvey -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:01 IST" finished-at="2020-10-11T00:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:01 IST" finished-at="2020-10-11T00:35:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:10 IST" finished-at="2020-10-11T00:35:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.rest.TC001_CreateSurveyRequest@9cfc36]" name="afterSuite" is-config="true" duration-ms="1280" started-at="2020-10-11T00:35:10 IST" finished-at="2020-10-11T00:35:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- tests.rest.TC001_CreateSurveyRequest -->
+      <class name="tests.rest.TC003_CreateQuestionsRequest">
+        <test-method status="PASS" signature="setValues()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="setValues" is-config="true" duration-ms="0" started-at="2020-10-11T00:34:50 IST" finished-at="2020-10-11T00:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setValues -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:03 IST" finished-at="2020-10-11T00:35:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-10-11T00:35:03 IST" finished-at="2020-10-11T00:35:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createNewQuestion()[pri:2, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="createNewQuestion" duration-ms="1650" started-at="2020-10-11T00:35:03 IST" finished-at="2020-10-11T00:35:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewQuestion -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:05 IST" finished-at="2020-10-11T00:35:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:05 IST" finished-at="2020-10-11T00:35:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createNewQuestion()[pri:2, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="createNewQuestion" duration-ms="1626" started-at="2020-10-11T00:35:05 IST" finished-at="2020-10-11T00:35:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewQuestion -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:06 IST" finished-at="2020-10-11T00:35:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.rest.TC003_CreateQuestionsRequest@1723e30]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-10-11T00:35:06 IST" finished-at="2020-10-11T00:35:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- tests.rest.TC003_CreateQuestionsRequest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
