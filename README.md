@@ -79,7 +79,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 	* config.properties
 		* Repository of configuration required for REST API calls
 * reponseAttributes.properties 
-	* Repository for maintaining paramters for chaining to REST API calls
+	* Repository for maintaining paramters for chaining of REST API calls
 * data
     * Contains json files to be passed to @DataProvider
 * reports
@@ -88,4 +88,4 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 	* Contains the maven dependencies required for the project and
 	* Maven plugin to run as Maven Test
 * REST.xml
-	* testNG.xml with the testcase classes to executed sequentially
+	* testNG.xml with the testcase classes to be executed sequentially
