@@ -43,8 +43,6 @@ runner/Runner
 hooks/BaseClass
 -Defines the common steps defined under Background in feature file.
 
-
-
 SurveyMonkey Scenario:
 
 Create a new survey using Rest API by providing the existing template id / survey id
@@ -56,33 +54,44 @@ Delete the unchanged question from the page
 Above scenario is implemented in custom made Testng framework with generation of ExtentReports
 
 Packages and Classes:
+
 srctests/rest/PreAndTest
 -Defines the methods with the annotations @BeforeSuite,@BeforeClass,@BeforeMethod,@AfterMethod,@DataProvider and implements abstract method
+
 tests/rest/RESTAssuredBase
 -Contains wrappers for the RESTAssured calls.
+
 lib/utils/DataInputProvider
 -Loads data from Excel in xlxs format
+
 lib/utils/HTMLReporter
 -Handles the Extent Report generation with a) capturing screenshots of web pages involved / b)Log status of API requests
+
 tests/rest/TC001_CreateSurveyRequest
 -Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for creating a survey.
+
 tests/rest/TC002_CreatePageRequest
 -Contains @BeforeTest method for setting the values for report generation and @TreponseAttributes.propertiesest method with REST Assured steps for creating a page for the survey.
+
 tests/rest/TC003_CreateQuestionsRequest
 -Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for creating questions for the survey.
+
 tests/rest/TC004_ModifyQuestionsRequest
 -Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for modifying a question based on id in the Survey.
+
 tests/rest/TC005_DeleteQuestionsRequest
 -Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for deleting a question based on id in the Survey.
 
 /src/test/resources
 config.properties
 -Repository of configuration required for REST API calls
+
 reponseAttributes.properties
 -Repository for maintaining paramters for chaining to REST API calls
 
 /data
 -Contains json files to be passed to @DataProvider
+
 /reports
 -result.html - ExtentReports generated for the scenarios excecuted
 
