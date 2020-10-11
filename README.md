@@ -1,5 +1,5 @@
 
-# RestWorkout
+# RestWorkout 
 Contains API testscripts implemented in Rest Assured framework for scenarios based on SurveyMonkey and PayStack APIs.
 
 ## Paystack Scenario :
@@ -31,15 +31,16 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 ### Above mentioned scenario is also implemented in BDD Framework.
 
 ## Packages and Classes:
-### features/paymentpage.feature
+
+#### features/paymentpage.feature 
 * Feature file Feature and Scenario definitions using Gherkin keywords (Given,When,Then And)
 * Background keyword defines the common steps of the scenarios.
-### steps/PaymentPageSteps
+#### steps/PaymentPageSteps
 * Step Definitions file matching the steps in feature file.
-### runner/Runner
+#### runner/Runner
 * Runner File which executes the feature defined in paymentpage.feature
 * This class extends AbstractTestNGCucumberTests(TestNG class with corresponding annotations to run the feature)
-### hooks/BaseClass
+#### hooks/BaseClass
 * Defines the common steps defined under Background in feature file.
 
 ## SurveyMonkey Scenario:
@@ -56,7 +57,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 * src/tests/rest/PreAndTest
   * Defines the methods with the annotations @BeforeSuite,@BeforeClass,@BeforeMethod,@AfterMethod,@DataProvider and implements abstract method
 * tests/rest/RESTAssuredBase
-  * Contains wrappers for the RESTAssured calls.
+   * Contains wrappers for the RESTAssured calls.
 * lib/utils/DataInputProvider
   * Loads data from Excel in xlxs format
 * lib/utils/HTMLReporter
@@ -81,10 +82,15 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 	* Repository for maintaining paramters for chaining to REST API calls
 * data
     * Contains json files to be passed to DataProvider
+* reponseAttributes.properties 
+	* Repository for maintaining paramters for chaining of REST API calls
+* data
+    * Contains json files to be passed to @DataProvider
 * reports
     * result.html - ExtentReports generated for the scenarios excecuted
 * pom.xml
 	* Contains the maven dependencies required for the project and
 	* Maven plugin to run as Maven Test
 * REST.xml
-	* testNG.xml with the testcase classes to executed sequentially
+  * testNG.xml with the testcase classes to be executed sequentially
+
