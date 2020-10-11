@@ -1,5 +1,6 @@
 
 # RestWorkout 
+
 Contains API testscripts implemented in Rest Assured framework for scenarios based on SurveyMonkey and PayStack APIs.
 
 ## Paystack Scenario :
@@ -31,15 +32,15 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 ### Above mentioned scenario is also implemented in BDD Framework.
 
 ## Packages and Classes:
-### features/paymentpage.feature 
+#### features/paymentpage.feature 
 * Feature file Feature and Scenario definitions using Gherkin keywords (Given,When,Then And)
 * Background keyword defines the common steps of the scenarios.
-### steps/PaymentPageSteps
+#### steps/PaymentPageSteps
 * Step Definitions file matching the steps in feature file.
-### runner/Runner
+#### runner/Runner
 * Runner File which executes the feature defined in paymentpage.feature
 * This class extends AbstractTestNGCucumberTests(TestNG class with corresponding annotations to run the feature)
-### hooks/BaseClass
+#### hooks/BaseClass
 * Defines the common steps defined under Background in feature file.
 
 ## SurveyMonkey Scenario:
