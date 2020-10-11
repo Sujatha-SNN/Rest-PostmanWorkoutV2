@@ -65,7 +65,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 * tests/rest/TC001_CreateSurveyRequest
   * Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for creating a survey.
 * tests/rest/TC002_CreatePageRequest
-  * Contains @BeforeTest method for setting the values for report generation and @TreponseAttributes.propertiesest method with REST Assured steps for creating a page for the survey.
+  * Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for creating a page for the survey.
 * tests/rest/TC003_CreateQuestionsRequest
   * Contains @BeforeTest method for setting the values for report generation and @Test method with REST Assured steps for creating questions for the survey.
 * tests/rest/TC004_ModifyQuestionsRequest
