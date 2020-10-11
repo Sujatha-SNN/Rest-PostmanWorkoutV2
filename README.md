@@ -1,6 +1,5 @@
 
 # RestWorkout 
-
 Contains API testscripts implemented in Rest Assured framework for scenarios based on SurveyMonkey and PayStack APIs.
 
 ## Paystack Scenario :
@@ -15,7 +14,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 #### paystack/BaseClass
 * Parent class extended by PayStackPayments,GetPage,GetAllPaymentPages
 * Loads the PaySatck URL and handles the authentication using OAUTH2.0
-####  paystack/PayStackPayments 
+####  paystack/PayStackPayments
 * This class creates payment page on paystack - use oauth2.0 for authorization using the client id and client secret.
 * Makes a Post call to the endPoint for payment page creation with the body param set as JSON.
 * Parse the response to extract the id generated for the payments page created.
@@ -24,7 +23,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 * This class gets all payments pages and verify the newly created page detail.(using Hamcrest and assertion)
 * Makes a Get call to the endPoint for getAllPaymentsPage with the query params as required.
 * Use Assertion and Hamcrest(String Pattern matcher) to check the presence of id generated in the previous step
-#### paystack/GetPage 
+#### paystack/GetPage
 * This class gets the newly created payments page and check the details.(Using Hamcrest and assertion)
 * Makes a Get call to the endPoint to get the payment page creation with the path param as required.
 * Use Assertion and Hamcrest(String Pattern matcher) to check the presence of id generated in the previous step
@@ -32,6 +31,7 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 ### Above mentioned scenario is also implemented in BDD Framework.
 
 ## Packages and Classes:
+
 #### features/paymentpage.feature 
 * Feature file Feature and Scenario definitions using Gherkin keywords (Given,When,Then And)
 * Background keyword defines the common steps of the scenarios.
@@ -56,8 +56,8 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 ## Packages and Classes:
 * src/tests/rest/PreAndTest
   * Defines the methods with the annotations @BeforeSuite,@BeforeClass,@BeforeMethod,@AfterMethod,@DataProvider and implements abstract method
-* tests/rest/RESTAssuredBase 
-  * Contains wrappers for the RESTAssured calls.
+* tests/rest/RESTAssuredBase
+   * Contains wrappers for the RESTAssured calls.
 * lib/utils/DataInputProvider
   * Loads data from Excel in xlxs format
 * lib/utils/HTMLReporter
@@ -78,6 +78,10 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 * src/test/resources
 	* config.properties
 		* Repository of configuration required for REST API calls
+* reponseAttributes.properties
+	* Repository for maintaining paramters for chaining to REST API calls
+* data
+    * Contains json files to be passed to DataProvider
 * reponseAttributes.properties 
 	* Repository for maintaining paramters for chaining of REST API calls
 * data
@@ -88,4 +92,5 @@ It is implemented in REST API custom Framework using Chaining in TestNG.
 	* Contains the maven dependencies required for the project and
 	* Maven plugin to run as Maven Test
 * REST.xml
-	* testNG.xml with the testcase classes to be executed sequentially
+  * testNG.xml with the testcase classes to be executed sequentially
+
